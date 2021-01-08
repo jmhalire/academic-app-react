@@ -1,14 +1,52 @@
-/*css*/
 body {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+/* first botom */
+.btn-cyan {
+  background-color: darkcyan;
+  color: #ffffff;
+}
+.btn-cyan:hover {
+  background-color: #006b70;
+  color: white;
+}
+
+.btn-check:focus + .btn-cyan,
+.btn-cyan:focus {
+  background-color: #00565a;
+  box-shadow: 0 0 0 0.2rem #007c7ca9;
+}
+
+/* segundo boton */
+.btn-brown {
+  background-color: #4d4037;
+  color: #ffffff;
+}
+.btn-brown:hover {
+  color: white;
+  background-color: #3a2e27;
+}
+.btn-check:focus + .btn-brown,
+.btn-brown:focus {
+  background-color: #3a2e27;
+  box-shadow: 0 0 0 0.2rem #6b594c;
+}
+
+.btn{
+  box-shadow: 0 1px 2px #444444;
+}
+.btn:hover {
+  transform: translateY(-2px);
 }

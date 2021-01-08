@@ -1,0 +1,7 @@
+.btn-yes-end, .btn-not-end{
+    width: 100px;
+}
+
+.btns-confirm-end{
+    justify-content: space-around;
+}

@@ -1,0 +1,35 @@
+
+.login {
+    margin-top: 5em;
+    box-shadow: 0 0 8px #000000;
+    border-radius: 10px;
+}
+
+.input-signin {
+    color: #00ddff;
+    font-size: 23px;
+    background: transparent;
+    border: 2px solid #d1d1d1;
+}
+.input-signin:focus {
+    border: 2px solid #0d9ec2e0;
+    box-shadow: 0 0 0 1px #1395b680;
+    transition: all 0.3s;
+}
+
+button {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn:hover{
+    cursor: pointer!important;
+}
+
+@media (min-width: 576px) {
+    .login {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

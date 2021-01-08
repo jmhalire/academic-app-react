@@ -1,0 +1,20 @@
+
+/* component career */
+.career-admin {
+  contain: content;
+}
+
+.card-create-career, .header-create-career{
+  box-shadow: 0 1px 2px #444444;
+}
+.header-create-career{
+  display: flex;
+}
+.btn-new-career{
+  margin-left: auto;
+}
+.header-create-career{
+  display: flex;
+  border-radius: 5px;
+  background-color: #fff;
+}
