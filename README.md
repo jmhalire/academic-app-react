@@ -1,4 +1,4 @@
-![](https://repository-images.githubusercontent.com/270150208/cd653200-a851-11ea-9d9c-910b66ca0006)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
