@@ -22,8 +22,7 @@ export const useStudentCourse = () => {
       setdateConsult(true);
     }, []
   )
-
-
+  
   return {
     ListStudents,
     SelectCourse,

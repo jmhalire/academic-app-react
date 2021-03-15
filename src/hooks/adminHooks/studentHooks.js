@@ -98,7 +98,7 @@ export const useCreateStudent = ({ setupdateList }) => {
             if (validateForm()) {
                 newStudent.career = parseInt(newStudent.career);
                 newStudent.email = `${newStudent.code}@unsaac.edu.pe`;
-                if (newStudent.key === newStudent.confirmKey) {
+                if (newStudent.key === newStudent.confirmKey) { 
                     const { confirmKey, ...data } = newStudent;
                     fetch(`${url}/student/create`, {
                         method: "POST",

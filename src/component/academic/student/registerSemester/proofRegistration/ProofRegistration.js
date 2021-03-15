@@ -22,7 +22,7 @@ export default function ProofRegistration(props) {
                 <h5 className="text-white">list of courses selected for his register in semester 2020-2</h5>
                 <h5 className="ml-auto text-white">Nro credits : <strong className="nro-credits">{Cred}</strong></h5>
             </div>
-            <table className="table table-bordered">
+            <table className="/current-semestertable table-bordered">
                 <thead className="card-header">
                     <tr>
                         <th scope="col" style={{ width: "20%" }}>Code</th>

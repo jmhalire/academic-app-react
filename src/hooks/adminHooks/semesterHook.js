@@ -81,7 +81,7 @@ export const useStateSemester = () => {
         (e) => {
             e.preventDefault();
             if (dateActiveRegister.fromDate !== "" && dateActiveRegister.toDate !== "") {
-                fetch(`${url}/semester/active-enable`, {
+                fetch(`${url}/semester/enable-register`, {
                     method: "POST",
                     headers: headers(),
                     body: JSON.stringify(dateActiveRegister)

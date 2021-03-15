@@ -55,7 +55,6 @@ const Register = () => {
             <CourseOffered courseOffered={ListCourseOffered} addCourse={addCourse} />
           </>
           : <ProofRegistration registerCourse={ListCourseSelected} />
-
       }
     </>
   )

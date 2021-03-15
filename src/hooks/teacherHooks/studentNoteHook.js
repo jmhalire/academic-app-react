@@ -13,7 +13,7 @@ export const useStudentNote = () => {
       setSelectCourse(course);
       fetch(`${url}/teacher/notes-course/${course.id}`, {
         method: "GET",
-        headers: headers()
+        headers: headers() 
       })
         .then(res => res.json())
         .then(data => {
