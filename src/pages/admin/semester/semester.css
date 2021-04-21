@@ -1,0 +1,27 @@
+.card-semester{
+    padding: 1.5em 1em;
+    font-size: 18px;
+    color: var(--color-white);
+}
+.semester-active{
+    display: block;
+    text-align: center;
+}
+
+h5{
+    font-weight: 500;
+}
+
+.start-end-semester{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.start, .end{
+    text-align: center;
+    width: 50%;
+}
+
+@media screen and (max-width:450px){
+
+}

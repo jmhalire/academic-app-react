@@ -1,0 +1,69 @@
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+}
+/*--------------------------- boton primario ------------------*/
+.btn-primary {
+  background: var(--color-btn-primary);
+  color: var(--color-white);
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.3rem var(--color-primary);
+}
+
+.btn-outline-primary {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-outline-primary:hover {
+  color: var(--color-white);
+  background: var(--color-white);
+}
+
+/*--------------------------- boton blanco ------------------*/
+.btn-white {
+  background: var(--color-btn-white);
+  color: var(--color-btn-primary);
+}
+
+.btn-check:focus + .btn-white,
+.btn-white:focus,
+.btn-outline-white:focus {
+  box-shadow: 0 0 0 0.25rem #f8f9fa80;
+}
+
+
+.btn-outline-white {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-outline-white:hover {
+  color: var(--color-btn-primary);
+  background: var(--color-white);
+}
+
+
+
+
+/*clase general de los botones*/
+.btn {
+  transition: 0.35s;
+  background-size: 250% auto;
+}
+.btn:hover {
+  background-position: right center;
+}

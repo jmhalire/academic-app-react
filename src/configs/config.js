@@ -1,5 +1,5 @@
 // CONFIGS
-export const url = 'http://localhost:3000';
+export const url = 'http://localhost:8080';
 
 export const headersLogin = () => {
     return new Headers({
@@ -9,10 +9,10 @@ export const headersLogin = () => {
 }
 
 export const headers = () => {
-    let user = JSON.parse(sessionStorage.getItem("user"));
+    const {token} = JSON.parse(sessionStorage.getItem("user"));
     return new Headers({
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "authorization": `Bearer ${user.token}`
+        "authorization": `Bearer ${token}`
     })
 }

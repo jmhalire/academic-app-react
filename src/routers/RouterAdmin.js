@@ -1,31 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-import { getNavigateAdmin } from "../helpers/linkNavigation";
-import ActiveSemester from "../component/academic/admin/activeSemester/ActiveSemester";
-import Career from "../component/academic/admin/career/Career";
-import Semester from "../component/academic/admin/semester/Semester";
-import Courses from "../component/academic/admin/course/Courses";
-import Personal from "../component/academic/admin/personal/Personal";
-import Navigation from "../component/academic/navigation/Navigation";
-import Asignation from "../component/academic/admin/asignationTeacher/Asignation";
+import Navigation from "../components/navigation/Navigation";
+import { AuthContext } from "../context";
+import Career from "../pages/admin/career/Career";
+import Course from "../pages/admin/course/Course";
+import Semester from "../pages/admin/semester/Semester";
+import Sidenav from "../pages/admin/sidenav/Sidenav";
 
 const RouterAdmin = () => {
 
-  let link = getNavigateAdmin();
-
+  const [state, setState] = useState(true)
+  const { user } = useContext(AuthContext)
+  const { role } = user
   return (
     <>
-      <Navigation links={link} />
-      <hr />
-      <ActiveSemester />
-      <Switch>
-        <Route exact path="/admin/semester" component={Semester}></Route>
-        <Route exact path="/admin/career" component={Career} ></Route>
-        <Route exact path="/admin/course" component={Courses} ></Route>
-        <Route exact path="/admin/personal" component={Personal}></Route>
-        <Route exact path="/admin/asignation-teacher" component={Asignation}></Route>
-        <Redirect from="/admin" to="/admin/semester" />
-      </Switch>
+      <Navigation role={role} state={state} setState={setState} />
+      <Sidenav state={state} />
+      <div className={'main ' + (state ? 'sidenav-close' : 'sidenav-open')}>
+        <Switch>
+          <Route exact path="/admin/semester" component={Semester}></Route>
+          <Route exact path="/admin/career" component={Career} ></Route>
+          <Route exact path="/admin/course" component={Course} ></Route>
+          <Redirect from="/admin" to="/admin/semester" />
+        </Switch>
+      </div>
     </>
   )
 }

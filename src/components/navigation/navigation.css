@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 2px #6b6b6b;
+}
+.navbar .nav-item {
+  display: flex;
+  align-items: center;
+}
+.navbar .nav-item .nav-link {
+  border-radius: 5px;
+  padding: 5px;
+  list-style: none;
+  color: var(--color-white);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbar .nav-item .nav-link:hover {
+  background-color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.role{
+  color: #fff;
+  margin-left: 2rem;
+}
