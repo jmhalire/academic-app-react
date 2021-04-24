@@ -10,14 +10,14 @@ const init = () => {
 
 function App() {
 
-  const [user, dispatch] = useReducer(authReducer,{}, init);
+  const [user, dispatch] = useReducer(authReducer, {}, init);
 
   useEffect(() => {
     sessionStorage.setItem('user', JSON.stringify(user));
   }, [user])
   return (
     <AuthContext.Provider value={{ user, dispatch }}>
-        <AppRouter />
+      <AppRouter />
     </AuthContext.Provider>
   );
 }

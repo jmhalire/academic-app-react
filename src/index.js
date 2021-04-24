@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
+//estilos generales
+import './index.css';
 import './styles/btn.css';
 import './styles/style.css';
-import './styles/sidenav.css'
+import './styles/sidenav.css';
+import './styles/tableAdmin.css';
+import './styles/form.css';
 
 ReactDOM.render(
   <React.StrictMode>

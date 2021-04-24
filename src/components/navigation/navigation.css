@@ -1,4 +1,8 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -19,7 +23,7 @@
 }
 
 .navbar .nav-item .nav-link:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-tertiary);
   cursor: pointer;
 }
 

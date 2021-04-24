@@ -1,0 +1,111 @@
+.create-course {
+  margin: 10px 0px;
+  padding: 15px 0px;
+}
+
+.btn-create-career {
+  width: 300px;
+  font-weight: 400;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn-create-career:hover {
+  background-color: var(--color-secondary);
+  color: #fff;
+  box-shadow: 0 1px 2px #444;
+  cursor: pointer;
+}
+.title-list-career {
+  text-align: center;
+  font-weight: 400;
+}
+
+.label {
+  margin-right: 5px;
+  font-size: 17px;
+  white-space: pre;
+}
+
+select {
+  background-color: #fff;
+}
+.create-course form .select-career select {
+  width: 100%;
+}
+
+/*list courses*/
+.select-career-name {
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/*info course*/
+.info-course {
+  display: flex;
+}
+
+.info-course .category-credits {
+  width: 55%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.info-course .name {
+  width: 45%;
+}
+
+form .button {
+  display: flex;
+  padding: 10px;
+}
+
+.create-course form .button .btn {
+  width: 200px;
+  margin: auto;
+}
+
+/*componsnt Search course*/
+.search {
+  padding: 10px 5px;
+}
+.form-course-search {
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-course-search .career {
+  width: 70%;
+}
+.form-course-search .button {
+  width: 30%;
+}
+.form-course-search .button button {
+  width: 100%;
+}
+
+@media screen and (max-width: 776px) {
+  .info-course .category-credits {
+    width: auto;
+  }
+  .info-course {
+    flex-direction: column;
+  }
+  .info-course .name {
+    width: auto;
+  }
+
+  /*search*/
+  .form-course-search {
+    flex-direction: column;
+    align-items: initial;
+  }
+
+  .form-course-search .career {
+    width: auto;
+  }
+  .form-course-search .button {
+    width: auto;
+  }
+}

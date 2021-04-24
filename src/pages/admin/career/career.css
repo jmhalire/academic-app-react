@@ -1,0 +1,53 @@
+.create-career{
+    margin: 10px 0px;
+    padding: 15px 0px;
+}
+.title-career{
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 0px;
+}
+.form-career {
+    display: flex;
+    align-items: flex-end;
+}
+.label{
+    margin-right: 5px;
+    font-size: 17px;
+}
+
+.create-career .form-career .code {
+    width: 20%;
+}
+
+.create-career .form-career .name {
+    width: 60%;
+}
+.create-career .form-career .button {
+    width: 20%;
+}
+.create-career .form-career .button .btn {
+    width: 100%;
+}
+
+@media screen and (max-width: 776px) {
+    .form-career {
+        flex-direction: column;
+        align-items: normal;
+    }
+    .create-career .form-career .code {
+        width: auto;
+    }
+    
+    .create-career .form-career .name {
+        width: auto;
+    }
+    .create-career .form-career .button {
+        width: auto;
+    }
+    .create-career .form-career .button .btn {
+        width: auto;
+        margin: auto;
+    }
+}
+

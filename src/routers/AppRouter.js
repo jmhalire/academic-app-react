@@ -17,7 +17,7 @@ const AppRouter = () => {
     setRegisterActive,
     setisMessage,
     setmessage,
-    closeMassage,
+    //closeMassage,
     // createdSem
   } = useAppRouter();
 

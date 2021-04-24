@@ -1,22 +1,15 @@
 /* estilos para input */
-.form-control {
-  outline: none;
-  border-radius: 5px;
-  border: 2px solid #41aaad;
-  padding: 5px;
-  font-size: 20px;
-  color: var(--color-primary);
-  width: 100%;
-}
 
-.form-control:focus {
-  box-shadow: 0 0 0 2px #4db1a7;
-}
 
 /*estilo card*/
 .card {
-  background-color: var(--color-primary);
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 2px #6b6b6b;
+  contain: content;
+  z-index: 2;
+}
 
+.card-list{
+  padding-bottom: 7px;
 }

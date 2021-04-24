@@ -1,7 +1,7 @@
 .btn {
   text-align: center;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 12px;
   margin-bottom: 0;
   font-size: 14px;
   cursor: pointer;
@@ -10,6 +10,8 @@
   border-radius: 5px;
   outline: none;
   background-color: transparent;
+  height: 100%;
+  font-size: 15px;
 }
 /*--------------------------- boton primario ------------------*/
 .btn-primary {
@@ -20,17 +22,60 @@
 .btn-check:focus + .btn-primary,
 .btn-primary:focus,
 .btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.3rem var(--color-primary);
+  box-shadow: 0 0 0 0.3rem #10c4b5;
 }
 
 .btn-outline-primary {
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-outline-primary:hover {
   color: var(--color-white);
-  background: var(--color-white);
+  background: var(--color-primary);
+}
+/*--------------------------- boton secondary ---------------*/
+.btn-secondary {
+  background: var(--color-btn-secondary);
+  color: var(--color-white);
+}
+
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.3rem #74e0d4;
+}
+
+.btn-outline-secondary {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-outline-secondary:hover {
+  color: var(--color-white);
+  background: var(--color-secondary);
+}
+
+/*--------------------------- boton tertiary ---------------*/
+.btn-tertiary {
+  background: var(--color-btn-tertiary);
+  color: var(--color-white);
+}
+
+.btn-check:focus + .btn-tertiary,
+.btn-tertiary:focus,
+.btn-outline-tertiary:focus {
+  box-shadow: 0 0 0 0.3rem #94fff6;
+}
+
+.btn-outline-tertiary {
+  color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+}
+
+.btn-outline-tertiary:hover {
+  color: var(--color-white);
+  background: var(--color-tertiary);
 }
 
 /*--------------------------- boton blanco ------------------*/

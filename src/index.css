@@ -7,29 +7,22 @@
 
   --color-btn-primary: linear-gradient(
     90deg,
-    var(--color-primary) 20%,
-    var(--color-while) 50%,
-    var(--color-primary) 80%
+    #005562 20%,
+    #10c4b5 50%,
+    #005562 80%
   );
   --color-btn-secondary: linear-gradient(
     90deg,
-    #035569 20%,
-    #26a0da 50%,
-    #035569 80%
+    #0e8174 20%,
+    #74e0d4 50%,
+    #0e8174 80%
   );
   --color-btn-tertiary: linear-gradient(
     90deg,
-    #4d0505 20%,
-    #bb554a 50%,
-    #4d0505 80%
+    #10c4b5 20%,
+    #94fff6 50%,
+    #10c4b5 80%
   );
-  --color-btn-tertiary: linear-gradient(
-    90deg,
-    #4d0505 20%,
-    #bb554a 50%,
-    #4d0505 80%
-  );
-
   --color-btn-white: linear-gradient(
     90deg,
     #ffff 20%,
@@ -55,19 +48,25 @@ body {
   user-select: none;
 }
 
-body #root{
-  width: 100vw;
-  height: 100vh;
-}
 
 
 /*
 * EL MENU DEL DASHBOARD
 */
 .main{
-  margin: 10px;
+  margin: 50px 10px 10px 10px;
 }
 
-@media screen and (max-width:450px) {
+/*tables in general*/
+.table {
+  border-collapse: collapse;
+  min-width: 480px;
+  width: 100%;
+}
 
+
+@media screen and (max-width:992px) {
+  .main{
+    margin: 50px 5px 10px 5px;
+  }
 }

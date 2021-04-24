@@ -1,10 +1,7 @@
 .loader {
-  background-color: #000000d7;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  background-color: #005562c2;
+  /* position: absolute; */
+  height: 200px;
   display: flex;
 }
 .spinner {
@@ -12,8 +9,8 @@
   margin: auto;
   box-sizing: border-box;
   background-clip: padding-box;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border: 6px solid var(--color-secondary);
   animation: spinner-wiggle 1s infinite;
@@ -22,10 +19,10 @@
 .spinner span {
   position: absolute;
   top: 40%;
-  left: 18%;
+  left: 12%;
   color: #fff;
-  font-size: 25px;
-  animation: zoom 1.5s infinite;
+  font-size: 17px;
+  animation: zoom 1s infinite;
 }
 
 .spinner:before,
@@ -39,19 +36,19 @@
   border-radius: inherit;
   opacity: 1;
   border: inherit;
-  border-color: #ffffff88;
-  animation: spinner-spin 1s infinite, spinner-fade 1s linear infinite;
+  border-color: #fff;
+  animation: spinner-spin .7s infinite, spinner-fade .5s linear infinite;
 }
 
 .spinner:before {
-  border-bottom-color: #ffee00;
-  border-left-color: #ffee00;
+  border-bottom-color: var(--color-white);
+  border-left-color: var(--color-primary);
 }
 
 .spinner:after {
-  border-right-color: var(--color-primary);
-  border-top-color: var(--color-primary);
-  animation-delay: 0.3s;
+  border-right-color: var(--color-tertiary);
+  border-top-color: var(--color-secondary);
+  animation-delay: 0.1s;
 }
 
 @keyframes spinner-spin {
@@ -77,35 +74,35 @@
   }
   10% {
     transform: scale3d(1.03, 1.03, 1.03);
-    color: #ffee00;
+    color: var(--color-secondary);
   }
   20% {
     transform: scale3d(1.06, 1.06, 1.06);
   }
   30% {
     transform: scale3d(1.09, 1.09, 1.09);
-    color: aqua;
+    color: var(--color-white);
   }
   40% {
     transform: scale3d(1.12, 1.12, 1.12);
   }
   50% {
     transform: scale3d(1.15, 1.15, 1.15);
-    color: var(--color-white);
+    color: var(--color-tertiary);
   }
   60% {
     transform: scale3d(1.12, 1.12, 1.12);
   }
   70% {
     transform: scale3d(1.09, 1.09, 1.09);
-    color: aqua;
+    color: var(--color-primary);
   }
   80% {
     transform: scale3d(1.06, 1.06, 1.06);
   }
   90% {
     transform: scale3d(1.03, 1.03, 1.03);
-    color: #ffee00;
+    color: var(--color-secondary);
   }
   100% {
     transform: scale3d(1, 1, 1);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { TeacherContext } from "../context";
 import { useRouterTeacher } from "../hooks/teacherHooks/routerTeacherHook";
 

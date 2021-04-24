@@ -1,16 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import ListCareer from './ListCareer'
+import CreateCareer from './CreateCareer'
 
 const Career = () => {
+
   return (
     <>
-      <h1>hola i am career</h1>
+      <CreateCareer/>
+      <ListCareer />
     </>
   )
-}
-
-Career.propTypes = {
-
 }
 
 export default Career
