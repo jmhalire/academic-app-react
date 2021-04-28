@@ -23,14 +23,9 @@
     #94fff6 50%,
     #10c4b5 80%
   );
-  --color-btn-white: linear-gradient(
-    90deg,
-    #ffff 20%,
-    #10c4b5 50%,
-    #ffff 80%
-  );
+  --color-btn-white: linear-gradient(90deg, #ffff 20%, #10c4b5 50%, #ffff 80%);
 }
-*{
+* {
   margin: 0%;
   padding: 0%;
 }
@@ -43,18 +38,25 @@ body {
   background: linear-gradient(180deg, #10c4b5 15%, #0eddcc 55%, #10c4b5 78%);
   background-size: cover;
   background-position-x: center;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
   user-select: none;
+  overflow: hidden;
 }
-
-
 
 /*
 * EL MENU DEL DASHBOARD
 */
-.main{
-  margin: 50px 10px 10px 10px;
+.main {
+  height: 93vh;
+  margin-top: 34px;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+}
+.main::before {
+  content: "";
+  height: 10px;
 }
 
 /*tables in general*/
@@ -62,11 +64,69 @@ body {
   border-collapse: collapse;
   min-width: 480px;
   width: 100%;
+  font-size: 14px;
 }
 
-
-@media screen and (max-width:992px) {
-  .main{
-    margin: 50px 5px 10px 5px;
+@media screen and (max-width: 776px) {
+  .table {
+    font-size: 12px;
+  }
+  .main::-webkit-scrollbar {
+    width: 0px;
   }
 }
+@media screen and (max-width: 992px) {
+  .main {
+    margin-left: 2px;
+    padding-right: 1px;
+    height: 94vh;
+  }
+  .main::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .main::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    margin-left: 10px;
+  }
+}
+/**/
+
+.main::-webkit-scrollbar-track {
+  background: #10c4b5;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  border-radius: 10px;
+}
+.main::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+  cursor: pointer !important;
+}
+
+/*para la ventana de windows*/
+/* ::-webkit-scrollbar {
+  width: 10px; 
+  height: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #10c4b5;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  cursor: pointer !important;
+} */

@@ -1,4 +1,4 @@
-import { typesLogin } from "../types/typesLogin";
+import { typesLogin, typesSidenav } from "../types/types";
 
 
 export const authReducer = (state = {}, action ) => {
@@ -13,6 +13,17 @@ export const authReducer = (state = {}, action ) => {
                 ...action.payload,
                 logged: false
             }
+        default:
+            return state;
+    }
+}
+
+export const sidenavReducer = (state = {}, action ) => {
+    switch (action.type) {
+        case typesSidenav.show:
+            return true;
+        case typesSidenav.hidden:
+            return false
         default:
             return state;
     }

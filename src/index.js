@@ -8,8 +8,11 @@ import './index.css';
 import './styles/btn.css';
 import './styles/style.css';
 import './styles/sidenav.css';
-import './styles/tableAdmin.css';
+import './styles/table.css';
 import './styles/form.css';
+import './styles/courseComponent.css';
+import './styles/routerCourse.css';
+
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,27 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import Navigation from "../components/navigation/Navigation";
-import { AuthContext } from "../context";
+import { SidenavContext } from "../context";
 import Career from "../pages/admin/career/Career";
 import Course from "../pages/admin/course/Course";
 import HomeAdmin from "../pages/admin/home/HomeAdmin";
-import Sidenav from "../pages/admin/sidenav/Sidenav";
+import SidenavAdmin from "../pages/admin/sidenav/SidenavAdmin";
 
 const RouterAdmin = () => {
 
-  const [state, setState] = useState(true)
-  const { user } = useContext(AuthContext)
-  const { role } = user
-
-  let clase = (state ? 'sidenav-close' : 'sidenav-open');
-  if(window.innerWidth<1200){
-    clase = '';
-  }
+  const { clase } = useContext(SidenavContext)
 
   return (
     <>
-      <Navigation role={role} state={state} setState={setState} />
-      <Sidenav state={state} />
+      <Navigation />
+      <SidenavAdmin />
       <div className={'main ' + clase}>
         <Switch>
           <Route exact path="/admin/home" component={HomeAdmin}></Route>

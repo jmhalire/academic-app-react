@@ -1,61 +1,41 @@
-import { useCallback, useContext, useEffect, useState } from "react";
-import { headers, url } from "../configs/config";
-import { AuthContext } from "../context";
-
+import { useEffect, useState } from "react";
+import { fetchGet } from "../helpers/fetch";
 
 export const useAppRouter = () => {
 
-    //se extrae name del objeto user
-    const { user } = useContext(AuthContext);
     const [semActive, setSemActive] = useState({ code: "-", fromDate: "-", toDate: "-" });
-    const [message, setmessage] = useState({ value: '', nameClass: '' });
-    const [isMessage, setisMessage] = useState(false);
-    const [registerActive, setRegisterActive] = useState(false);
+    const [message, setMessage] = useState({ value: '', nameClass: '' })
+    const [isMessage, setIsMessage] = useState(false);
     const [NewSem, setNewSem] = useState(false);
-    
+
     useEffect(() => {
-        if (user.logged) {
-            fetch(`${url}/semester/active`, {
-                method: "GET",
-                headers: headers()
-            })
-                .then(res => res.json())
-                .then(data => {
-                    const {activeRegister : ac} = data;
-                    if (!data.message) {
-                        setSemActive(data);
-                        if (ac.state) {
-                            setRegisterActive(true);
-                        }
-                    }
-                })
-                .catch(err => err);
+        async function getData() {
+            const res = await fetchGet('/semester/active')
+            if (!res.message) {
+                setSemActive(res);
+            } else {
+                console.log('no hay semestre activo');
+            }
         }
+        getData();
+    }, []);
 
-    }, [user,NewSem]);
+    const closeMassage = () => {
+        setMessage({ value: '', nameClass: '' });
+        setIsMessage(false);
+    }
 
-    const closeMassage = useCallback(
-        () => {
-            setmessage({ value: '', nameClass: '' });
-            setisMessage(false);
-        },
-        [],
-    )
-
-    const createdSem = ()=>{
+    const createdSem = () => {
         setNewSem(!NewSem);
     }
 
     return {
-        user,
         isMessage,
         message,
-        registerActive,
         semActive,
         createdSem,
-        setRegisterActive,
-        setisMessage,
-        setmessage,
+        setIsMessage,
+        setMessage,
         closeMassage
     }
 }

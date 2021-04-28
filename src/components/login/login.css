@@ -1,3 +1,7 @@
+.loading-login{
+  position: absolute;
+  width: inherit;
+}
 .login {
   display: flex;
   width: 100vw;

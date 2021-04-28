@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const PublicRoute = ({
     isAuthenticated,
@@ -11,32 +11,24 @@ const PublicRoute = ({
     return (
         <Route {...rest}
             component={(props) => {
-                let route = null;
                 //si es usuario esta logeado entonces redireccionamos a su ruta
                 //deacuerdo a su rol
                 //caso contario nos quedamos en la ruta login
                 if (logged) {
                     switch (role) {
                         case 'ADMIN':
-                            console.log('admin');
-                            route = (<Redirect to="/admin" />);
-                            break;
+                            return (<Redirect to="/admin" />);
                         case 'TEACHER':
-                            route = (<Redirect to="/teacher" />);
-                            break;
+                            return (<Redirect to="/teacher" />);
                         case 'STUDENT':
-                            route = (<Redirect to="/student" />);
-                            break;
+                            return (<Redirect to="/student" />);
                         default:
-                            break;
+                            return (<></>);
                     }
                 } else {
-                    route = (<Component {...props} />);
+                    return (<Component {...props} />);
                 }
-                return route;
-
-            }
-            }
+            }}
         />
     );
 }

@@ -1,0 +1,30 @@
+.sub-main-course-teacher {
+  padding: 15px;
+}
+
+.sub-main-course-teacher::-webkit-scrollbar {
+  width: 6px; /* Tamaño del scroll en vertical */
+  height: 0px; /* Tamaño del scroll en horizontal */
+}
+
+.sub-main-course-teacher::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.sub-main-course-teacher::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  cursor: pointer !important;
+}
+
+.sub-main-course-teacher::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 776px) {
+  .sub-main-course-teacher {
+    height: 615px;
+    overflow-y: scroll;
+  }
+}

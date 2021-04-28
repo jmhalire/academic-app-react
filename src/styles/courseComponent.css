@@ -1,0 +1,137 @@
+/*content-course*/
+.course-component {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  contain: content;
+}
+.content-course {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* height: 660px;     */
+}
+
+.content-course .chat {
+  margin-right: auto;
+  width: 100%;
+  animation: 0.5s show-chat normal;
+}
+.content-course .chat .chat-content {
+  height: 640px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 2px 5px #303030;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  contain: content;
+}
+
+@keyframes show-chat {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.content-course .chat-hidden {
+  width: 0%;
+  opacity: 0.5;
+  transform: translateX(-150%);
+  transition: 0.5s;
+}
+
+.content-course .other {
+  margin-left: auto;
+}
+.content-course .other .other-content {
+  box-shadow: 0 2px 5px #303030;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 5px 0px;
+}
+
+.content-course .other-show-chat {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.content-course .other-hidden-chat {
+  width: 100%;
+  transition: 0.5s;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/*buton chat*/
+.btn-chat {
+  box-shadow: 0px 8px 8px #4444;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+}
+.btn-chat span {
+  margin: 0px 5px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background-color: var(--color-tertiary);
+  box-shadow: 0px 1px 2px #44444491;
+  height: fit-content;
+  white-space: pre;
+}
+.btn-chat span:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.btn-chat .show:hover {
+  background-color: var(--color-primary);
+}
+.btn-chat .hidden:hover {
+  background-color: var(--color-secondary);
+}
+
+@media screen and (min-width: 776px) {
+  .content-course .chat {
+    width: 40%;
+    position: absolute;
+  }
+
+  .content-course .other-hidden-chat {
+    width: 60%;
+  }
+
+  .content-course .other .other-content {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  .content-course .other-hidden-chat {
+    margin-top: 0px;
+  }
+
+  /* .sub-main-course-teacher {
+      height: 615px;
+    } */
+}
+
+@media screen and (min-width: 876px) {
+  .content-course .chat {
+    width: 36%;
+  }
+
+  .content-course .other-hidden-chat {
+    width: 64%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .content-course .chat {
+    width: 30%;
+  }
+
+  .content-course .other-hidden-chat {
+    width: 70%;
+  }
+}

@@ -1,0 +1,19 @@
+/* form-input-note */
+.form-note #note-value{
+    font-size: 14px;
+    padding: 4px 7px;
+    color: #000;
+}
+.btn-save-notes{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 776px) {
+    .form-note #note-value{
+        font-size: 13px;
+        padding: 4px;
+        color: #000;
+    }
+}

@@ -1,23 +1,45 @@
 import React, { useContext } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
-import { UserContext } from "../context";
+import { BrowserRouter as Router, Route, Redirect, Switch, useLocation } from "react-router-dom";
+import Navigation from "../components/navigation/Navigation";
+import { SidenavContext, StudentContex } from "../context";
+import { useRouterStudent } from "../hooks/studentHooks/routerStudentHook";
+import CourseStudent from "../pages/student/course/CourseStudent";
+import HomeStudent from "../pages/student/home/HomeStudent";
+import NotesStudent from "../pages/student/notes/NotesStudent";
+import SidenavStudent from "../pages/student/sidenav/SidenavStudent";
 
 const RouterStudent = () => {
 
-  const { registerActive } = useContext(UserContext);
+  const { clase } = useContext(SidenavContext);
+  const { courses, student } = useRouterStudent();
+
+  const { pathname } = useLocation();
+  let url = pathname.split('/');
 
   return (
     <>
-      <h1>soy student</h1>
-
-      <Switch>
-          {/* <Route exact path="/student/notes" component={Note}></Route>
-          <Route exact path="/student/courses" component={Course}></Route>
-          {
-            registerActive && <Route exact path="/student/register-semester" component={Register}></Route>
-          }
-        <Redirect from="/student" to="/student/notes"/> */}
-      </Switch>
+      <Navigation />
+      <StudentContex.Provider value={{ courses, student }}>
+        <Router basename='student'>
+          <SidenavStudent />
+          <div className={'main ' + clase}>
+            <Switch>
+              <Route path='/home' component={HomeStudent}></Route>
+              <Route path='/notes' component={NotesStudent}></Route>
+              {
+                courses.map((course) => (
+                  <Route key={course.code} path={`/${course.code}`} render={(props) => <CourseStudent {...props} data={{ course: course }} />}></Route>
+                ))
+              }
+              {
+                (url[2])
+                  ? <Redirect from='/' to={`/${url[2]}`} />
+                  : <Redirect from='*' to='/home' />
+              }
+            </Switch>
+          </div>
+        </Router>
+      </StudentContex.Provider>
     </>
   )
 }

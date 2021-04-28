@@ -2,12 +2,14 @@
   width: 250px;
   position: fixed;
   left: 0;
-  top: 44px;
+  top: 33px;
   background-color: var(--color-primary);
-  min-height: 100vh;
   box-shadow: 1px 3px 2px #444;
-  contain: content;
   z-index: 3;
+  bottom: 0px;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+  contain: content;
 }
 
 .sidenav-show {
@@ -27,11 +29,13 @@
 
 .sidenav-link {
   list-style: none;
-  padding: 15px 5px;
+  padding: 10px 5px;
   color: #ffff;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 13px;
+  margin: 4px 0px;
 }
 .sidenav-link.active {
   background-color: #fff;
@@ -39,7 +43,7 @@
   border: 1px solid var(--color-tertiary);
   border-left: 15px solid var(--color-tertiary);
   box-shadow: 0 1px 2px #b4b4b4;
-  transition: .4s;
+  transition: .2s;
 }
 .sidenav-link.active:hover {
   background-color: #fff;
@@ -49,7 +53,7 @@
   color: var(--color-other);
 }
 
-/*css for open or close of sidenav and main*/
+/*css for open or close of sidenav and sidenav*/
 .sidenav-open {
   margin-left: 10px;
   transition: 0.25s ease-in;
@@ -59,6 +63,63 @@
   margin-left: 260px;
   transition: 0.25s ease-out;
 }
+
+.course-asignated{
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  margin: 10px 0px;
+  padding: 3px 0px;
+  display: flex;
+  justify-content: center;
+}
+.course-asignated span{
+  color: cyan;
+  font-size: 12px;
+}
+
+.sidenav-link .code-course{
+  font-size: 18px;
+}
+
+.sidenav-link .name-course{
+  font-size: 13px;
+}
+
+
+/**/
+
+.sidenav::-webkit-scrollbar-track {
+  background: #005562;
+
+}
+.sidenav::-webkit-scrollbar-thumb {
+  background: #ffffffad;
+  border-radius: 10px;
+}
+.sidenav::-webkit-scrollbar-thumb:hover {
+  background: #ffffffea;
+  cursor: pointer !important;
+}
+
+@media screen and (max-width:776px) {
+  .sidenav::-webkit-scrollbar {
+    width: 3px; 
+  }
+}
+@media screen and (min-width:777px) {
+  .sidenav::-webkit-scrollbar {
+    width: 4px; 
+  }
+}
+@media screen and (min-width:993px) {
+  .sidenav::-webkit-scrollbar {
+    width: 6px; 
+  }
+}
+
+
+
+
 
 /*fot de perfil en sidenav*/
 .profile {
