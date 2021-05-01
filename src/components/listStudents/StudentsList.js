@@ -10,6 +10,8 @@ const StudentList = () => {
   sessionStorage.setItem('pathname', pathname)
 
   const { loader, listStudent } = useStateListStudentCourse()
+  
+  console.log(listStudent)
 
   return (
     <>

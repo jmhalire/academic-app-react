@@ -12,6 +12,7 @@
   background-color: transparent;
   height: 100%;
   font-size: 15px;
+  border: 1px solid;
 }
 /*--------------------------- boton primario ------------------*/
 .btn-primary {
@@ -59,7 +60,7 @@
 /*--------------------------- boton tertiary ---------------*/
 .btn-tertiary {
   background: var(--color-btn-tertiary);
-  color: var(--color-white);
+  color: #011a1a;
 }
 
 .btn-check:focus + .btn-tertiary,

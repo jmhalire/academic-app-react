@@ -1,21 +1,22 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { TeacherContext } from "../../../context";
+import { CourseContext, TeacherContext } from "../../../context";
 import { UseStateCourseTeacher } from "../../../hooks/teacherHooks/courseHook/useCourseTeacher";
 import { linkNavigateCourseTeacher } from "../../../helpers/linksCourse";
-import ChatTeacher from "./components/chatTeacher/ChatTeacher";
-import FormChatTeacher from "./components/chatTeacher/FormChat";
 import HeaderCourse from "../../../components/headerCourse/HeaderCourse";
 import NavigationCourse from "../../../components/navigationCourse/navigationCourse";
 import { useStateCourse } from "../../../hooks/useCourseCustom";
 import RouterCourseT from "./components/routerCourse/RouterCourseT";
+import Chat from "../../../components/chat/Chat";
+import FormChat from "../../../components/chat/FormChat";
 
 
 const CourseTeacher = ({ data }) => {
 
     const { teacher } = useContext(TeacherContext);
 
-    const { 
+    const {
+        socket,
         chat,
         chatRef,
         otherRef,
@@ -29,15 +30,15 @@ const CourseTeacher = ({ data }) => {
 
 
     return (
-        <>
-            <div className="course-component">
-                <HeaderCourse course={myCourse} />
-                <Router basename={`teacher/${data.code}`}>
+        <CourseContext.Provider value={{ course: myCourse, user: teacher, socket }}>
+            <Router basename={`teacher/${data.code}`}>
+                <div className="course-component">
+                    <HeaderCourse />
                     <div className="btn-chat">
                         {
                             (chat)
                                 ? (<span className="hidden" onClick={handleHiddenChat}>Ocultar Chat</span>)
-                                : (<span className="show" onClick={handleShowChat}>Mostrar Chat</span>)
+                                : (<span className="show" onClick={handleShowChat}>Mostrar Chat <i className="fas fa-toggle-on" aria-hidden='true'></i></span>)
                         }
                         <NavigationCourse linkNavigateCourse={linkNavigateCourseTeacher} />
                     </div>
@@ -46,21 +47,21 @@ const CourseTeacher = ({ data }) => {
                             (chat) && (
                                 <div className="chat" ref={chatRef}>
                                     <div className='chat-content'>
-                                        <ChatTeacher course={myCourse} teacher={teacher} />
-                                        <FormChatTeacher />
+                                        <Chat />
+                                        <FormChat />
                                     </div>
                                 </div>
                             )
                         }
                         <div className="other other-show-chat" ref={otherRef}>
                             <div className='other-content'>
-                                <RouterCourseT idCourse={myCourse.idCourse} />
+                                <RouterCourseT />
                             </div>
                         </div>
                     </div>
-                </Router>
-            </div>
-        </>
+                </div>
+            </Router>
+        </CourseContext.Provider>
     )
 }
 

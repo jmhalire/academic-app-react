@@ -9,17 +9,17 @@ export const useSatateNoteStudentCourse = ({ history }) => {
     const [updatedNotes, setUpdatedNotes] = useState([])
 
     const { semActive } = useContext(UserContext);
-    const { idCourse } = useContext(CourseContext);
+    const { course } = useContext(CourseContext);
 
     useEffect(() => {
         async function getData() {
-            const res = await fetchGet(`/teacher/notes-of-course/${idCourse}`);
+            const res = await fetchGet(`/teacher/notes-of-course/${course.id  || course.idCourse}`);
             setListNotesCourse(res);
             setLoader(false);
             createArrayNotes(res);
         }
         getData();
-    }, [idCourse])
+    }, [course])
 
 
     const createArrayNotes = (listNotes) => {

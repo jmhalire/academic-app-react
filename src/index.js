@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 //estilos generales
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './index.css';
 import './styles/btn.css';
 import './styles/style.css';
@@ -16,7 +17,7 @@ import './styles/routerCourse.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

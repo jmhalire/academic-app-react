@@ -8,11 +8,11 @@ import './navigation.css';
 const Navigation = () => {
 
     const { user, dispatch: dispatchAuth } = useContext(AuthContext);
-    const { state, dispatch: dispatchSidenav} = useContext(SidenavContext);
+    const { state, dispatch: dispatchSidenav } = useContext(SidenavContext);
     const { role } = user;
-    
+
     const handleDispatchAuth = () => {
-        dispatchAuth({ type: typesLogin.logout }) 
+        dispatchAuth({ type: typesLogin.logout })
     }
 
     const handleDispatchSidenav = () => {
@@ -23,7 +23,9 @@ const Navigation = () => {
     return (
         <div className="navbar">
             <ul className="nav-item">
-                <button className="btn btn-outline-white btn-sidenav" onClick={handleDispatchSidenav}>+</button>
+                <i class="fas fa-bars btn-sidenav" onClick={handleDispatchSidenav}></i>
+
+                {/* <button className="btn btn-outline-white btn-sidenav" onClick={handleDispatchSidenav}>+</button> */}
                 <span className="role">{role}</span>
             </ul>
             <ul className="nav-item">

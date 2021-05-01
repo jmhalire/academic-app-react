@@ -2,6 +2,7 @@
   height: 570px;
   overflow-y: scroll;
   background-color: #296b7744;
+  contain: content;
 }
 
 .messages-chat::-webkit-scrollbar {
@@ -24,7 +25,30 @@
   border-radius: 10px;
 }
 
+/* =================== form chat teacher =================== */
 
+.form-chat-teacher {
+  padding: 6px;
+}
+
+.btns-chat {
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btns-chat button {
+  width: 130px;
+}
+
+.element-state-chat {
+  text-align: center;
+}
+.element-state-chat span {
+  display: block;
+  color: #7a0202;
+  margin: 5px 0px;
+}
 /* ======================= card-message =======================*/
 
 .card-message {
@@ -33,15 +57,17 @@
   box-shadow: 0 2px 3px #6b6b6b;
   margin: 8px 5px;
   width: 80%;
-  contain: content;
+  /* contain: content; */
 }
 
 .card-message-left {
+  border-top-left-radius: initial;
   animation: 0.8s message-left normal;
 }
 
 .card-message-right {
   margin-left: auto;
+  border-top-right-radius: initial;
   animation: 0.8s message-right normal;
 }
 
@@ -62,9 +88,11 @@
   color: #fff;
   justify-content: space-between;
   align-items: center;
+  height: 4px;
 }
 .card-message .message-header .name-user {
   font-size: 11px;
+  transform: translateY(-4px);
 }
 .card-message .message-body {
   padding: 3px 5px;
@@ -72,6 +100,7 @@
 
 .card-message .message-header .role {
   font-size: 11px;
+  transform: translateY(-4px);
 }
 
 .card-message .message-footer {
@@ -87,9 +116,13 @@
 /*personalizacion de chats lado derecho*/
 .card-message-right .message-header {
   background-color: #296e51;
+  margin-right: -4px;
+  border-top: 8px solid transparent;
+  border-right: 4px solid #c2d3db;
+  border-top-left-radius: 3px;
 }
 
-.card-message-right .message-body{
+.card-message-right .message-body {
   color: #0b3020;
 }
 
@@ -100,12 +133,51 @@
 /*personalizacion de chats lado izquierdo*/
 .card-message-left .message-header {
   background-color: var(--color-primary);
+  margin-left: -4px;
+  border-top: 8px solid transparent;
+  border-left: 4px solid #c2d3db;
+  border-top-right-radius: 3px;
 }
 
-.card-message-left .message-body{
+.card-message-left .message-body {
   color: #0b2530;
 }
 
 .card-message-left .message-footer .date {
   color: #1b475a;
+}
+
+/* chat notify*/
+
+.chat-notify {
+  background-color: green;
+  color: white;
+  margin: 4px 0px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  width: max-content;
+  animation: chat-notify 0.5s normal;
+}
+
+@keyframes chat-notify {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.list-chat-notify {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  contain: content;
+}
+
+/* typing user*/
+.typing-user {
+    margin: 11px 0px 11px 5px;
+    color: #47006b;
+    display: block;
 }

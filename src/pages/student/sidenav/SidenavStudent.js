@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SidenavContext, StudentContex, UserContext } from '../../../context';
 
-import "./sidenavStudent.css";
-
 const SidenavStudent = () => {
 
     const { state } = useContext(SidenavContext);
     const { semActive } = useContext(UserContext);
     const { code } = semActive;
-    const { courses } = useContext(StudentContex);
+    const { courses, student } = useContext(StudentContex);
+    const { firstName, lastName, name } = student;
 
     /*se ejecuta despues de hacer el render dek+l DOM*/
 
@@ -17,12 +16,12 @@ const SidenavStudent = () => {
         <div className={'sidenav ' + (state ? 'sidenav-show' : 'sidenav-hidden')}>
             <div className="profile">
                 <div className="profile-photo"></div>
-                <span className="profile-name">jaime andre halire huaman</span>
+                <span className="profile-name">{name} {firstName} {lastName}</span>
             </div>
             <ul id='links' className="sidenav-item">
                 <NavLink activeClassName="active" className="sidenav-link" to="/home">MENU PRINCIPAL</NavLink>
-                <NavLink activeClassName="active" className="sidenav-link" to="/notes">CONSTANCIA DE NOTAS Y MATRICULA</NavLink>
-                <NavLink activeClassName="active" className="sidenav-link" to="/register">PROCESO DE MATRICULA</NavLink>
+                <NavLink activeClassName="active" className="sidenav-link" to="/constance-notes">CONSTANCIA DE NOTAS Y MATRICULA</NavLink>
+                <NavLink activeClassName="active" className="sidenav-link" to="/process-register">PROCESO DE MATRICULA</NavLink>
                 <div className="course-asignated">
                     <span>MIS CURSOS - {code}</span>
                 </div>

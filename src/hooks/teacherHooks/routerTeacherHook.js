@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchGet } from "../../helpers/fetch"
+import { fetchGet } from "../../helpers/fetch";
 
 
-export const useRouterTeacher = ()=>{
+
+export const useRouterTeacher = () => {
+
     const [courses, setCourses] = useState([]);
     const [teacher, setTeacher] = useState({
         code: "",

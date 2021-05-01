@@ -1,7 +1,7 @@
-import { headers, headersLogin, url } from "../configs/config"
+import { headers, headersLogin, API } from "../configs/config"
 
 const fetchAuth = async (path, body) => {
-    const res = await fetch(`${url}${path}`, {
+    const res = await fetch(`${API}${path}`, {
         method: "POST",
         headers: headersLogin(),
         body: JSON.stringify(body)
@@ -10,7 +10,7 @@ const fetchAuth = async (path, body) => {
 }
 
 const fetchGet = async (path) => {
-    const res = await fetch(`${url}${path}`, {
+    const res = await fetch(`${API}${path}`, {
         method: "GET",
         headers: headers()
     })
@@ -18,7 +18,7 @@ const fetchGet = async (path) => {
 
 }
 const fetchPost = async (path, body) => {
-    const res = await fetch(`${url}${path}`, {
+    const res = await fetch(`${API}${path}`, {
         method: "POST",
         headers: headers(),
         body: JSON.stringify(body)

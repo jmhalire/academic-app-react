@@ -15,16 +15,10 @@ export const UseStateCourseTeacher = (code) => {
     useEffect(() => {
         async function getData() {
             const res = await fetchGet(`/course/code/${code}`)
-            setMyCourse({
-                ...res,
-            })
+            setMyCourse(res)
         }
         getData();
-    }, [code])
-
-    
-
-
+    }, [])
 
     return {
         myCourse

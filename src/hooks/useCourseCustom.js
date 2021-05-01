@@ -1,10 +1,29 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import * as IO from 'socket.io-client';
+import { API } from "../configs/config";
 
-export const useStateCourse = () => {
+export const useStateCourse = (id) => {
 
     const [chat, setChat] = useState(false);
+    const [socket, setSocket] = useState()
     const otherRef = useRef();
     const chatRef = useRef();
+
+    useEffect(() => {
+        const socketIO = IO(API, { transports: ['websocket'], query: { idUser: id } })
+        setSocket(socketIO);
+        socketIO.on("connect", (e) => {
+            console.log('WS: Connected', socketIO);
+        })
+
+        socketIO.on("connect_error", (e) => {
+            console.log(e);
+        });
+        return () => {
+            console.log('disconnect', );
+            socketIO.disconnect()
+        }
+    }, [])
 
     const handleHiddenChat = () => {
         const { current: other } = otherRef;
@@ -27,6 +46,7 @@ export const useStateCourse = () => {
     }
 
     return {
+        socket,
         chat,
         chatRef,
         otherRef,

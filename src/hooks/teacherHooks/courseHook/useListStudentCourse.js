@@ -7,16 +7,16 @@ export const useStateListStudentCourse = () => {
   const [listStudent, setListStudent] = useState([])
   const [loader, setLoader] = useState(true)
 
-  const { idCourse } = useContext(CourseContext);
-  
+  const { course } = useContext(CourseContext);
+
   useEffect(() => {
     async function getData() {
-      const res = await fetchGet(`/teacher/student-course/${idCourse}`)
-      setListStudent(res)
-      setLoader(false)
+      const res = await fetchGet(`/teacher/student-course/${course.id || course.idCourse}`);
+      setListStudent(res);
+      setLoader(false);
     }
     getData();
-  }, [idCourse])
+  }, [course])
 
   return {
     listStudent,
