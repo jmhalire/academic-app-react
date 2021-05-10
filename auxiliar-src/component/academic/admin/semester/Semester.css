@@ -1,0 +1,12 @@
+
+.card-semester{
+  box-shadow: 0 1px 2px #444444;
+}
+
+.header-semester{
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #444444;
+  background-color: #fff;
+  justify-content: space-between;
+}

@@ -1,0 +1,20 @@
+.card-register-student{
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #444444;
+}
+.input-checkbox-register{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.election{
+    display: flex;
+}
+
+.title-course-offered{
+    padding: 5px;
+    background-color: #5c4d42;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    margin: 0px 0;
+}
