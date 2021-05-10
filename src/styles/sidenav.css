@@ -10,17 +10,15 @@
   padding-bottom: 2rem;
   overflow-y: scroll;
   contain: content;
+  transition: 0.4s;
+}
+.hidden-sidenav {
+  width: 0% !important;
+  opacity: 0.5;
+  transform: translateX(-150%);
+  transition: 0.4s;
 }
 
-.sidenav-show {
-  transform: translateX(0px);
-  transition: 0.25s ease-in;
-}
-
-.sidenav-hidden {
-  transform: translateX(-250px);
-  transition: 0.25s ease-out;
-}
 
 .sidenav-item {
   display: flex;
@@ -34,7 +32,7 @@
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   margin: 4px 0px;
 }
 .sidenav-link.active {
@@ -54,15 +52,6 @@
 }
 
 /*css for open or close of sidenav and sidenav*/
-.sidenav-open {
-  margin-left: 10px;
-  transition: 0.25s ease-in;
-}
-
-.sidenav-close {
-  margin-left: 260px;
-  transition: 0.25s ease-out;
-}
 
 .course-asignated{
   border-top: 1px solid #d8d8d8;
@@ -117,7 +106,12 @@
   }
 }
 
-
+@media screen and (min-width: 1200px) {
+  .sidenav{
+    width: 19%;
+    transition: .4s;
+  }
+}
 
 
 
@@ -143,7 +137,6 @@
   font-size: 14px;
 }
 @media screen and (max-width:992px) {
-
   .sidenav-open {
     margin-left: 5px;
     transition: 0.25s ease-in;

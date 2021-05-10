@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SidenavContext, TeacherContext } from '../../../context';
+import { TeacherContext } from '../../../context';
 
 
 const SidenavTeacher = () => {
 
     const { courses, teacher } = useContext(TeacherContext);
-    const { state } = useContext(SidenavContext);
+    //const { state } = useContext(SidenavContext);
     const { firstName, lastName, name } = teacher;
     /*se ejecuta despues de hacer el render dek+l DOM*/
 
     return (
-        <div className={'sidenav ' + (state ? 'sidenav-show' : 'sidenav-hidden')}>
+        <div id='sidenav' className='sidenav'>
             <div className="profile">
                 <div className="profile-photo"></div>
                 <span className="profile-name"> {name} {firstName} {lastName}</span>
@@ -35,7 +35,6 @@ const SidenavTeacher = () => {
                                 <div>
                                     <span className="name-course">{course.name}</span>
                                 </div>
-
                             </NavLink>
                         )
                     })

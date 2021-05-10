@@ -1,8 +1,7 @@
 import React from 'react';
+import { useStateOnSocketChat } from '../../hooks/chatHooks/useOnSocketChat';
 
 import './chat.css';
-import { useStateOnSocket } from '../../hooks/useOnSocket';
-import ChatNotify from './ChatNotify';
 
 const ChatBody = () => {
 
@@ -11,25 +10,16 @@ const ChatBody = () => {
     refMessageChat,
     user,
     typing,
-    chatNotify,
     listMessages,
-    deleteNotify,
-  } = useStateOnSocket();
+  } = useStateOnSocketChat();
 
 
   let nameAux = '';
   return (
     <>
-      <div className="list-chat-notify">
-        {
-          chatNotify.map((item) => (
-            <ChatNotify key={item.id} message={item.notify} deleteNotify={deleteNotify} />
-          ))
-        }
-      </div>
       <div className="messages-chat" ref={refMessageChat}>
         {
-          listMessages.map((data,index) => {
+          listMessages.map((data, index) => {
             let nameAntes = nameAux;
             const {
               codeUser,

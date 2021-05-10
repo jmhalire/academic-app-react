@@ -8,13 +8,13 @@
   --color-btn-primary: linear-gradient(
     90deg,
     #005562 20%,
-    #10c4b5 50%,
+    #0a9ea3 50%,
     #005562 80%
   );
   --color-btn-secondary: linear-gradient(
     90deg,
     #0e8174 20%,
-    #74e0d4 50%,
+    #59c5b8 50%,
     #0e8174 80%
   );
   --color-btn-tertiary: linear-gradient(
@@ -38,7 +38,7 @@ body {
   background: linear-gradient(180deg, #10c4b5 15%, #0eddcc 55%, #10c4b5 78%);
   background-size: cover;
   background-position-x: center;
-  height: 100vh;
+  /* height: 100vh; */
   user-select: none;
   overflow: hidden;
 }
@@ -47,18 +47,18 @@ body {
 * EL MENU DEL DASHBOARD
 */
 .main {
-  height: 93vh;
-  margin-top: 34px;
-  padding-top: 10px;
-  padding-right: 5px;
-  padding-bottom: 10px;
+  margin-top: 33px;
+  padding: 10px 3px;
   overflow-y: scroll;
-}
-.main::before {
-  content: "";
-  height: 10px;
+  height: 93vh;
+  margin-left: auto;
+  transition: .4s;
+  /* width: 100% !important; */
 }
 
+.main::-webkit-scrollbar {
+  width: 4px;
+}
 /*tables in general*/
 .table {
   border-collapse: collapse;
@@ -76,24 +76,29 @@ body {
   }
 }
 @media screen and (max-width: 992px) {
-  .main {
+  /* .main {
     margin-left: 2px;
     padding-right: 1px;
     height: 94vh;
-  }
-  .main::-webkit-scrollbar {
+  } */
+  /* .main::-webkit-scrollbar {
     width: 4px;
-  }
+  } */
 }
 @media screen and (min-width: 993px) {
   .main::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .main {
-    margin-left: 10px;
+    width: 80.5%;
+    transition: .4s;
+  }
+  .show-main{
+    width: 100%;
+    transition: .4s;
   }
 }
 /**/
@@ -103,11 +108,11 @@ body {
 }
 
 .main::-webkit-scrollbar-thumb {
-  background: #e7e7e7;
+  background: var(--color-primary);
   border-radius: 10px;
 }
 .main::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: var(--color-primary);
   cursor: pointer !important;
 }
 

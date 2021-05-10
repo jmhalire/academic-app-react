@@ -16,15 +16,17 @@
 }
 
 .navbar .nav-item .btn-sidenav{
-  margin-left: 10px;
+  position: absolute;
+  margin-left: 5px;
   color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #fff;
 }
 .navbar .nav-item .btn-sidenav:hover{
   color: #fff;
   cursor: pointer;
   background-color: #74e0d4;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0.4rem #74e0d4;
   color: #000;
 }
 
@@ -45,5 +47,5 @@
 
 .navbar .nav-item .role{
   color: #fff;
-  margin-left: 2rem;
+  margin-left: 6rem;
 }

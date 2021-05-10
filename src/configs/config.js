@@ -1,6 +1,7 @@
 // CONFIGS
-export const API = 'http://[::1]:8080';
-//export const url = 'https://api-academic-nestjs.herokuapp.com';
+//export const API = 'http://[::1]:8080';
+//export const API = 'http://192.168.43.7:8080';
+export const url = 'https://api-academic-nestjs.herokuapp.com';
 
 
 export const headersLogin = () => {

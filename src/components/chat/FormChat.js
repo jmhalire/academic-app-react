@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { CourseContext } from '../../context';
-import { useStateEmitSocket } from '../../hooks/useEmitSocket';
+import React from 'react';
+import { useStateEmitSocket } from '../../hooks/chatHooks/useEmitSocket';
 
 import './chat.css'
 
@@ -18,7 +17,7 @@ const FormChat = () => {
         handleBlur
     } = useStateEmitSocket()
     return (
-        <div className="form-chat-teacher">
+        <div className="chat-form-user">
             {
                 (stateChat)
                     ? (
@@ -34,7 +33,7 @@ const FormChat = () => {
                             />
                             <div className="btns-chat">
             
-                                <button type='submit' className="btn btn-primary" >Enviar <i class="fas fa-paper-plane"></i></button>
+                                <button type='submit' className="btn btn-primary" >Enviar <i className="fas fa-paper-plane"></i></button>
                                 {
                                     (user.roles === 'TEACHER') &&
                                     <button type='button' className="btn btn-outline-primary" onClick={handleDeactiveChat}>desactivar chat</button>

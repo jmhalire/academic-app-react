@@ -11,8 +11,6 @@ const StudentList = () => {
 
   const { loader, listStudent } = useStateListStudentCourse()
   
-  console.log(listStudent)
-
   return (
     <>
       <h1 className="title-table">LISTA DE ESTUDIANTES DEL CURSO</h1>

@@ -1,24 +1,23 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-import './chat.css'
 
-const ChatNotify = ({ message, deleteNotify }) => {
+const NotifyRoom = ({ message, deleteNotify }) => {
 
     useEffect(() => {
         setTimeout(() => {
             deleteNotify()
         }, 10000);
-    }, [])
+    }, [deleteNotify])
 
     return (
         <span className="chat-notify">{message}</span>
     )
 }
 
-ChatNotify.propTypes = {
+NotifyRoom.propTypes = {
     message: PropTypes.string.isRequired,
     deleteNotify: PropTypes.func.isRequired
 }
 
-export default ChatNotify;
+export default NotifyRoom;

@@ -1,20 +1,18 @@
 import { useContext, useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
-import { CourseContext } from "../context";
-import { fetchGet } from "../helpers/fetch";
-import { chatNotifyReducer, listMessagesReducer } from "../reducer";
-import { typesSocket } from "../types/types";
+import { CourseContext, SocketContext } from "../../context";
+import { fetchGet } from "../../helpers/fetch";
+import { listMessagesReducer } from "../../reducer";
+import { typesSocket } from "../../types/types";
 
-export const useStateOnSocket = () => {
+export const useStateOnSocketChat = () => {
 
     //const [socket, setSocket] = useState();
-    const { user, course, socket } = useContext(CourseContext);
+    const { user, course } = useContext(CourseContext);
+    const { socket } = useContext(SocketContext);
     const { chatId } = course;
     const [typing, setTyping] = useState({ state: false, value: '' });
     const refMessageChat = useRef();
-    const [chatNotify, dispatchNotify] = useReducer(chatNotifyReducer, []);
     const [listMessages, dispatchMessages] = useReducer(listMessagesReducer, [])
-
-
 
     /* obtenemos todos los mensajes de esta sala */
     useEffect(() => {
@@ -26,55 +24,33 @@ export const useStateOnSocket = () => {
             })
         }
         getData();
-    }, [])
+    }, [chatId])
 
     useLayoutEffect(() => {
         handleScroll()
     }, [])
 
     useEffect(() => {
-        let data = {
-            typeChat: 'joinSala',
-            nameUser: user.name,
-            firstNameUser: user.firstName,
-            lastNameUser: user.lastName,
-            codeCourse: course.code,
-            categoryCourse: course.category,
-            message: 'unirme al chat'
-        }
-
-        socket.emit(typesSocket.clientMessage, data);
-
         socket.on(typesSocket.serverMessage, (chat) => {
             const { typeChat } = chat;
             switch (typeChat) {
-                case typesSocket.conected:
-                    dispatchNotify({
-                        type: 'add',
-                        payload: { id: new Date().getMilliseconds(), notify: chat.message }
-                    })
-                    break;
-                case typesSocket.leave:
-                    dispatchNotify({
-                        type: 'add',
-                        payload: { id: new Date().getMilliseconds(), notify: chat.message }
-                    })
-                    break;
+
                 case typesSocket.typing:
                     setTyping({
                         state: true,
                         value: chat.message
-                    })
-                    handleScroll()
+                    });
+                    handleScroll();
                     break;
                 case typesSocket.blur:
                     setTyping({
-                        ...typing,
-                        state: false
-                    })
-                    handleScroll()
+                        state: false,
+                        value: ''
+                    });
+                    handleScroll();
                     break;
                 case typesSocket.message:
+                    console.log(chat);
                     let newMessage = {
                         ...chat,
                         createdAt: new Date(chat.createdAt).toLocaleString()
@@ -82,8 +58,8 @@ export const useStateOnSocket = () => {
                     dispatchMessages({
                         type: 'add',
                         payload: [newMessage]
-                    })
-                    handleScroll()
+                    });
+                    handleScroll();
                     break;
                 default:
                     break;
@@ -106,18 +82,7 @@ export const useStateOnSocket = () => {
         socket.on('unauthorized', (unauthorized) => {
             console.log(unauthorized);
         });
-
-        return () => {
-            let data = {
-                typeChat: "leave",
-                nameUser: user.name,
-                firstNameUser: user.firstName,
-                lastNameUser: user.lastName,
-                room: `${course.code}${course.category}`
-            }
-            socket.emit(typesSocket.clientMessage, data);
-        };
-    }, [])
+    }, [socket])
 
     const handleScroll = () => {
         setTimeout(() => {
@@ -128,19 +93,10 @@ export const useStateOnSocket = () => {
         }, 300);
     }
 
-    const deleteNotify = () => {
-        dispatchNotify({
-            type: 'remove',
-            payload: '0'
-        })
-    }
-
     return {
         refMessageChat,
         user,
         typing,
-        chatNotify,
         listMessages,
-        deleteNotify
     }
 }

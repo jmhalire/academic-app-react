@@ -12,7 +12,6 @@ import './styles/sidenav.css';
 import './styles/table.css';
 import './styles/form.css';
 import './styles/courseComponent.css';
-import './styles/routerCourse.css';
 
 
 ReactDOM.render(

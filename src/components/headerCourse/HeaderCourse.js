@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { CourseContext } from "../../context";
+import PropTypes from "prop-types";
 
 import './headerCourse.css';
 
-const HeaderCourse = () => {
+const HeaderCourse = ({ setShowHiddenRoom, showHiddenRoom }) => {
 
   const { course, user } = useContext(CourseContext);
-
   return (
     <div className="content-headeer-course">
       <div className="header-course">
@@ -20,7 +20,7 @@ const HeaderCourse = () => {
             <span className="category">Categoria: {course.category}</span>
             <span className="credit">Creditos: {course.credit}</span>
             {
-              (user === 'TEACHER') && (<span className="career">Carrera: {course.nameCareer}</span>)
+              (user.roles === 'TEACHER') && (<span className="career">Carrera: {course.nameCareer}</span>)
             }
           </div>
         </div>
@@ -29,12 +29,23 @@ const HeaderCourse = () => {
         </div>
       </div>
       <div className="btn-join-sala">
-        <button className="btn btn-tertiary">UNIRME A LA CLASE VIRTUAL</button>
+        {
+          (!showHiddenRoom) &&
+          (
+            <button className="btn btn-tertiary" onClick={()=>{setShowHiddenRoom(!showHiddenRoom)}}>
+              UNIRME A LA CLASE VIRTUAL
+            </button>
+          )
+        }
       </div>
     </div>
   )
 }
 
+HeaderCourse.propTypes = {
+  setShowHiddenRoom: PropTypes.func.isRequired,
+  showHiddenRoom: PropTypes.bool.isRequired
+}
 
 export default HeaderCourse;
 

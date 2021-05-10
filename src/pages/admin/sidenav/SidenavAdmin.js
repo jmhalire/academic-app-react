@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { SidenavContext } from '../../../context';
 
 const SidenavAdmin = () => {
-
-  const { state } = useContext(SidenavContext)
 
   const handleLink = ({target}) => {
     let links = [...target.parentElement.children]
@@ -15,7 +12,7 @@ const SidenavAdmin = () => {
   }
 
   return (
-    <div className={'sidenav ' + (state ? 'sidenav-show' : 'sidenav-hidden')}>
+    <div id='sidenav' className='sidenav'>
       <div className="profile">
         <div className="profile-photo"></div>
         <span className="profile-name">jaime andre halire huaman</span>

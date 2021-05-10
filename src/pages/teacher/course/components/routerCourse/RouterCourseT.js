@@ -11,7 +11,7 @@ const RouterCourseT = () => {
     const url = sessionStorage.getItem('pathname')
 
     return (
-        <div className='sub-main-course-teacher'>
+        <div style={{padding:'15px'}}>
             <Switch >
                 <Route exact path={`/works`} render={(props) => (<WorksT {...props} />)}></Route>
                 <Route exact path={`/students-list`} render={(props) => (<StudentList {...props} />)}></Route>

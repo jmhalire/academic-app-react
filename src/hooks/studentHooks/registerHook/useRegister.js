@@ -10,7 +10,7 @@ export const useStateRegister = () => {
     useEffect(() => {
         async function getData() {
             const res = await fetchGet('/register/selected');
-            setListCourseSelected(res)
+            setListCourseSelected(res);
         }
         getData();
     }, [])
@@ -18,7 +18,7 @@ export const useStateRegister = () => {
     useEffect(() => {
         async function getData() {
             const res = await fetchGet('/register/offered');
-            setListCourseOffered(res)
+            setListCourseOffered(res);
         }
         getData();
     }, [])

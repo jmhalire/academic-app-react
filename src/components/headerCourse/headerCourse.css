@@ -2,6 +2,8 @@
 .content-headeer-course {
   background-color: var(--color-primary);
   box-shadow: 0px 1px 2px #44444491;
+  position: relative;
+  z-index: 1;
   contain: content;
 }
 .content-headeer-course .btn-join-sala{

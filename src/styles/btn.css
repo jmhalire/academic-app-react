@@ -12,7 +12,7 @@
   background-color: transparent;
   height: 100%;
   font-size: 15px;
-  border: 1px solid;
+  box-shadow: 0px 1px 2px #444;
 }
 /*--------------------------- boton primario ------------------*/
 .btn-primary {
@@ -23,7 +23,7 @@
 .btn-check:focus + .btn-primary,
 .btn-primary:focus,
 .btn-outline-primary:focus {
-  box-shadow: 0 0 0 0.3rem #10c4b5;
+  box-shadow: 0 0 0 0.2rem #10c4b5;
 }
 
 .btn-outline-primary {
@@ -44,7 +44,7 @@
 .btn-check:focus + .btn-secondary,
 .btn-secondary:focus,
 .btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.3rem #74e0d4;
+  box-shadow: 0 0 0 0.2rem #74e0d4;
 }
 
 .btn-outline-secondary {
@@ -66,7 +66,7 @@
 .btn-check:focus + .btn-tertiary,
 .btn-tertiary:focus,
 .btn-outline-tertiary:focus {
-  box-shadow: 0 0 0 0.3rem #94fff6;
+  box-shadow: 0 0 0 0.2rem #94fff6;
 }
 
 .btn-outline-tertiary {
