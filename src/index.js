@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//estilos generales
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './index.css';
+import './styles/btn.css';
+import './styles/style.css';
+import './styles/sidenav.css';
+import './styles/table.css';
+import './styles/form.css';
+import './styles/courseComponent.css';
+
 
 ReactDOM.render(
   <React.StrictMode>

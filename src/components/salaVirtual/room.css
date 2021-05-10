@@ -1,0 +1,111 @@
+.option-room {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 5px 5px #4444;
+  position: relative;
+  z-index: 3;
+}
+.option-room button {
+  padding: 5px;
+}
+
+.sala-virtual {
+  contain: content;
+  margin-bottom: 50px;
+  box-shadow: 0px 2px 4px #444;
+  animation: room .5s normal;
+}
+
+@keyframes room {
+  from{
+    transform: translateY(-100%);
+  }
+}
+.sala-virtual .body-room {
+  background-color: #06171e;
+}
+.sala-virtual .body-room .chat-content {
+  position: absolute;
+  width: 350px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.sala-virtual .body-room .members-content {
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  overflow-y: scroll;
+}
+
+.sala-virtual .body-room .hidden-chat {
+  width: 0% !important;
+  opacity: 0.5;
+  transform: translateX(-150%);
+  transition: 0.5s;
+  height: 0px;
+}
+
+.sala-virtual .body-room .show-members {
+  width: 100% !important;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 776px) {
+  .sala-virtual .body-room .members-content {
+    height: 90vh;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (min-width: 1100px) {
+  .sala-virtual .body-room .chat-content {
+    width: 30%;
+    transition: 0.5s;
+  }
+
+  .sala-virtual .body-room .members-content {
+    margin-left: auto;
+    width: 70%;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .sala-virtual .body-room .chat-content {
+    width: 25%;
+    transition: 0.5s;
+  }
+
+  .sala-virtual .body-room .members-content {
+    width: 75%;
+    transition: 0.5s;
+  }
+}
+
+.sala-virtual .body-room .members-content::-webkit-scrollbar {
+  width: 6px; /* Tamaño del scroll en vertical */
+  height: 0px; /* Tamaño del scroll en horizontal */
+}
+
+.sala-virtual .body-room .members-content::-webkit-scrollbar-thumb {
+  background: var(--color-white);
+  border-radius: 10px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.sala-virtual .body-room .members-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  cursor: pointer !important;
+}
+
+.sala-virtual .body-room .members-content::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 10px;
+}

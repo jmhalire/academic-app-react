@@ -1,31 +1,34 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-import { getNavigateAdmin } from "../helpers/linkNavigation";
-import ActiveSemester from "../component/academic/admin/activeSemester/ActiveSemester";
-import Career from "../component/academic/admin/career/Career";
-import Semester from "../component/academic/admin/semester/Semester";
-import Courses from "../component/academic/admin/course/Courses";
-import Personal from "../component/academic/admin/personal/Personal";
-import Navigation from "../component/academic/navigation/Navigation";
-import Asignation from "../component/academic/admin/asignationTeacher/Asignation";
+import Navigation from "../components/navigation/Navigation";
+import { useStateSidenavHook } from "../hooks/useSidenavHook";
+import Career from "../pages/admin/career/Career";
+import Course from "../pages/admin/course/Course";
+import HomeAdmin from "../pages/admin/home/HomeAdmin";
+import SidenavAdmin from "../pages/admin/sidenav/SidenavAdmin";
 
 const RouterAdmin = () => {
 
-  let link = getNavigateAdmin();
+  const {
+    handleSidenav
+  } = useStateSidenavHook()
 
   return (
     <>
-      <Navigation links={link} />
-      <hr />
-      <ActiveSemester />
-      <Switch>
-        <Route exact path="/admin/semester" component={Semester}></Route>
-        <Route exact path="/admin/career" component={Career} ></Route>
-        <Route exact path="/admin/course" component={Courses} ></Route>
-        <Route exact path="/admin/personal" component={Personal}></Route>
-        <Route exact path="/admin/asignation-teacher" component={Asignation}></Route>
-        <Redirect from="/admin" to="/admin/semester" />
-      </Switch>
+      <Navigation handleSidenav={handleSidenav} />
+      <div className="page-user">
+        <div className="page-user">
+          <SidenavAdmin />
+          <div id='main' className='main'>
+            <Switch>
+              <Route exact path="/admin/home" component={HomeAdmin}></Route>
+              <Route exact path="/admin/career" component={Career} ></Route>
+              <Route exact path="/admin/course" component={Course} ></Route>
+              <Redirect from="/admin" to="/admin/home" />
+            </Switch>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

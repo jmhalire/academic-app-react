@@ -1,35 +1,48 @@
 import React from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
-import Navigation from "../component/academic/navigation/Navigation";
-import Chat from "../component/academic/teacher/chat/chat";
-import NoteEntry from "../component/academic/teacher/noteEntry/NoteEntry";
-import StudentCourse from "../component/academic/teacher/studentForCourse/StudentCourse";
-import StudentNote from "../component/academic/teacher/studentNote/StudentNote";
+import { Redirect, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import Navigation from "../components/navigation/Navigation";
 import { TeacherContext } from "../context";
-import { getNavigateTeacher } from "../helpers/linkNavigation";
 import { useRouterTeacher } from "../hooks/teacherHooks/routerTeacherHook";
+import { useStateSidenavHook } from "../hooks/useSidenavHook";
+import CourseTeacher from "../pages/teacher/course/CourseTeacher";
+import HomeTeacher from "../pages/teacher/home/HomeTeacher";
+import SidenavTeacher from "../pages/teacher/sidenav/SidenavTeacher";
+
 
 const RouterTeacher = () => {
 
-  let link = getNavigateTeacher();
+  const { courses, teacher } = useRouterTeacher();
 
   const {
-    Courses
-  } = useRouterTeacher();
+    url,
+    handleSidenav
+  } = useStateSidenavHook();
 
   return (
     <>
-      <Navigation links={link} />
-      <hr />
-      <Switch>
-        <TeacherContext.Provider value={{Courses}}>
-          <Route exact path="/teacher/chat-with-student" component={Chat} ></Route>
-          <Route exact path="/teacher/student-note" component={StudentNote} ></Route>
-          <Route exact path="/teacher/student-for-course" component={StudentCourse}></Route>
-          <Route exact path="/teacher/note-entry" component={NoteEntry}></Route>
-          <Redirect from="/teacher" to="/teacher/chat-with-student" />
-        </TeacherContext.Provider>
-      </Switch>
+      <Navigation handleSidenav={handleSidenav} />
+      <TeacherContext.Provider value={{ courses, teacher }}>
+        <Router basename='teacher'>
+          <div className="page-user">
+            <SidenavTeacher />
+            <div id='main' className='main'>
+              <Switch>
+                <Route path='/home' component={HomeTeacher}></Route>
+                {
+                  courses.map((course) => (
+                    <Route key={course.code} path={`/${course.code}`} render={(props) => <CourseTeacher {...props} data={{ code: course.code }} />}></Route>
+                  ))
+                }
+                {
+                  (url[2])
+                    ? <Redirect from='/' to={`/${url[2]}`} />
+                    : <Redirect from='/' to='/home' />
+                }
+              </Switch>
+            </div>
+          </div>
+        </Router>
+      </TeacherContext.Provider>
     </>
   )
 }

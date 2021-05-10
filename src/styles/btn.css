@@ -1,0 +1,115 @@
+.btn {
+  text-align: center;
+  display: inline-block;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+  height: 100%;
+  font-size: 15px;
+  box-shadow: 0px 1px 2px #444;
+}
+/*--------------------------- boton primario ------------------*/
+.btn-primary {
+  background: var(--color-btn-primary);
+  color: var(--color-white);
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem #10c4b5;
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+/*--------------------------- boton secondary ---------------*/
+.btn-secondary {
+  background: var(--color-btn-secondary);
+  color: var(--color-white);
+}
+
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.2rem #74e0d4;
+}
+
+.btn-outline-secondary {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-outline-secondary:hover {
+  color: var(--color-white);
+  background: var(--color-secondary);
+}
+
+/*--------------------------- boton tertiary ---------------*/
+.btn-tertiary {
+  background: var(--color-btn-tertiary);
+  color: #011a1a;
+}
+
+.btn-check:focus + .btn-tertiary,
+.btn-tertiary:focus,
+.btn-outline-tertiary:focus {
+  box-shadow: 0 0 0 0.2rem #94fff6;
+}
+
+.btn-outline-tertiary {
+  color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+}
+
+.btn-outline-tertiary:hover {
+  color: var(--color-white);
+  background: var(--color-tertiary);
+}
+
+/*--------------------------- boton blanco ------------------*/
+.btn-white {
+  background: var(--color-btn-white);
+  color: var(--color-btn-primary);
+}
+
+.btn-check:focus + .btn-white,
+.btn-white:focus,
+.btn-outline-white:focus {
+  box-shadow: 0 0 0 0.25rem #f8f9fa80;
+}
+
+
+.btn-outline-white {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn-outline-white:hover {
+  color: var(--color-btn-primary);
+  background: var(--color-white);
+}
+
+
+
+
+/*clase general de los botones*/
+.btn {
+  transition: 0.35s;
+  background-size: 250% auto;
+}
+.btn:hover {
+  background-position: right center;
+}

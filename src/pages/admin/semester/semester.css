@@ -1,0 +1,37 @@
+.card-semester {
+  padding: 1.5em 1em;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.semester-active {
+  display: block;
+  text-align: center;
+}
+
+h4,h5 {
+  font-weight: 500;
+}
+
+.start-end-semester {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.start,
+.end {
+  margin-left: 1%;
+  margin-left: 1%;
+  text-align: center;
+  width: 48%;
+  border-top: 2px solid var(--color-secondary);
+}
+
+.answer{
+  background-color: var(--color-tertiary);
+  border-radius: 10px;
+}
+.btn-option{
+  white-space: pre;
+}
+@media screen and (max-width: 450px) {
+}

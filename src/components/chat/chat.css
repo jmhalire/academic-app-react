@@ -1,0 +1,166 @@
+
+.messages-chat {
+  overflow-y: scroll;
+  background-color: #95bbc2;
+  contain: content;
+  height: 70vh;
+}
+
+.messages-chat::-webkit-scrollbar {
+  width: 6px; /* Tamaño del scroll en vertical */
+  height: 0px; /* Tamaño del scroll en horizontal */
+}
+
+.messages-chat::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 10px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.messages-chat::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+  cursor: pointer !important;
+}
+
+.messages-chat::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 10px;
+}
+
+/* =================== form chat teacher =================== */
+
+.chat-form-user {
+  padding: 6px 6px 10px 6px;
+  background-color: #fff;
+  border-bottom-right-radius: 10px;
+}
+
+.btns-chat {
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btns-chat button {
+  width: 130px;
+}
+
+.element-state-chat {
+  text-align: center;
+}
+.element-state-chat span {
+  display: block;
+  color: #7a0202;
+  margin: 5px 0px;
+}
+/* ======================= card-message =======================*/
+
+.card-message {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px #6b6b6b;
+  margin: 8px 5px;
+  width: 80%;
+  /* contain: content; */
+}
+
+.card-message-left {
+  border-top-left-radius: initial;
+  animation: 0.8s message-left normal;
+}
+
+.card-message-right {
+  margin-left: auto;
+  border-top-right-radius: initial;
+  animation: 0.8s message-right normal;
+}
+
+@keyframes message-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes message-right {
+  from {
+    transform: translateX(150%);
+  }
+}
+
+.card-message .message-header {
+  display: flex;
+  padding: 2px 5px;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  height: 4px;
+}
+.card-message .message-header .name-user {
+  font-size: 11px;
+  transform: translateY(-4px);
+}
+.card-message .message-body {
+  padding: 3px 5px;
+}
+
+.card-message .message-header .role {
+  font-size: 11px;
+  transform: translateY(-4px);
+}
+
+.card-message .message-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px 5px;
+}
+
+.card-message .message-footer .date {
+  font-size: 11px;
+}
+
+/*personalizacion de chats lado derecho*/
+.card-message-right .message-header {
+  background-color: #296e51;
+  margin-right: -4px;
+  border-top: 8px solid transparent;
+  border-right: 4px solid #95d2ebc4;
+  border-top-left-radius: 3px;
+}
+
+.card-message-right .message-body {
+  color: #0b3020;
+}
+
+.card-message-right .message-footer .date {
+  color: #1a523a;
+}
+
+/*personalizacion de chats lado izquierdo*/
+.card-message-left .message-header {
+  background-color: var(--color-primary);
+  margin-left: -4px;
+  border-top: 8px solid transparent;
+  border-left: 4px solid #95d2ebc4;
+  border-top-right-radius: 3px;
+}
+
+.card-message-left .message-body {
+  color: #0b2530;
+}
+
+.card-message-left .message-footer .date {
+  color: #1b475a;
+}
+
+
+
+/* typing user*/
+.typing-user {
+    margin: 11px 0px 11px 5px;
+    color: #47006b;
+    display: block;
+}
+
+@media screen and (min-width: 776px){
+  .messages-chat {
+    height: 77vh;
+  }
+}

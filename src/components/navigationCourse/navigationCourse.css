@@ -1,0 +1,42 @@
+/*estilos para navigation*/
+.option-course {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  white-space: pre;
+  background-color: #fff;
+  border-top: 1px solid rgb(211, 211, 211);
+  box-shadow: 0px 5px 5px #4444;
+  position: relative;
+}
+.option-course a {
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  color: #000;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.option-course-link {
+  text-decoration: none;
+  margin: 5px;
+}
+.option-course-link.active {
+  border-bottom: 3px solid var(--color-primary);
+  border-radius: 6px;
+  color: var(--color-secondary);
+  transition: 0.4s;
+}
+
+.option-course-link:hover {
+  border-radius: 6px;
+  color: var(--color-primary);
+  background-color: #0055625e;
+}
+
+@media screen and (max-width:776px) {
+  .option-course a {
+    font-size: 12px;
+  }
+  
+}

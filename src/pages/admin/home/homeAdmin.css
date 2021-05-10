@@ -1,0 +1,26 @@
+.home-admin{
+    display: flex;
+}
+
+.home-admin .info{
+    width: 40%;
+    margin-right: 5px;
+}
+
+.home-admin .list{
+    width: 60%;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 776px) {
+    .home-admin{
+        flex-direction: column;
+    }
+    .home-admin .info, .home-admin .list{
+        width: auto;
+    }
+
+    .home-admin .list{
+        margin-top: 10px;
+    }
+}

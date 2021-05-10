@@ -1,0 +1,27 @@
+.form-group {
+  padding: 10px;
+
+
+    
+}
+
+.form-control {
+  display: block;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #41aaad;
+  padding: 5px;
+  font-size: 16px;
+  color: var(--color-primary);
+  width: 100%;
+}
+input{
+  max-width: -webkit-fill-available;
+}
+select:hover{
+  cursor: pointer;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px #4db1a7;
+}

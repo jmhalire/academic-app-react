@@ -1,9 +1,8 @@
-import { useReducer, useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
 import './App.css';
-import AppRouter from './routers/AppRouter';
-import { AuthContext } from './context/index';
-import { authReducer } from './reducer/index';
+import { AuthContext } from './context';
+import { authReducer } from './reducer';
+import AppRouter from './routers/AppRouter'
 
 const init = () => {
   return JSON.parse(sessionStorage.getItem('user')) || { logged: false };
@@ -16,16 +15,9 @@ function App() {
   useEffect(() => {
     sessionStorage.setItem('user', JSON.stringify(user));
   }, [user])
-
   return (
     <AuthContext.Provider value={{ user, dispatch }}>
-      <div className="image"></div>
-      <div className="main">
-        <Router>
-          <AppRouter />
-        </Router>
-      </div>
-
+      <AppRouter />
     </AuthContext.Provider>
   );
 }

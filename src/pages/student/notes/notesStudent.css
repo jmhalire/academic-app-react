@@ -1,0 +1,19 @@
+.title-constance-notes{
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+}
+
+.selected-one-semester{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0px;
+}
+.selected-one-semester select {
+    margin: 0px .8rem;
+}
+
+.selected-one-semester button {
+    width: 35%;
+}

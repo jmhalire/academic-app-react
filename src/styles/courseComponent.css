@@ -1,0 +1,27 @@
+/*content-course*/
+.course-component {
+  border-radius: 10px;
+  contain: content;
+  background-color: #fff;
+  padding-bottom: 10px;
+}
+
+
+
+/*buton chat*/
+
+@media screen and (min-width: 776px) {
+
+
+  /* .sub-main-course-teacher {
+      height: 615px;
+    } */
+}
+
+@media screen and (min-width: 876px) {
+
+}
+
+@media screen and (min-width: 1000px) {
+
+}

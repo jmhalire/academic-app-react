@@ -1,21 +1,42 @@
-import { useEffect, useState } from "react"
-import { headers, url } from "../../configs/config"
+import { useEffect, useState } from "react";
+import { fetchGet } from "../../helpers/fetch";
 
-export const useRouterTeacher = ()=>{
-    const [Courses, setCourses] = useState([])
+
+
+export const useRouterTeacher = () => {
+
+    const [courses, setCourses] = useState([]);
+    const [teacher, setTeacher] = useState({
+        code: "",
+        createdAt: "",
+        email: "",
+        firstName: "",
+        id: 0,
+        lastName: "",
+        name: "",
+        roles: "",
+        speciality: "",
+        updatedAt: "",
+    })
 
     useEffect(() => {
-        fetch(`${url}/teacher/my-courses`,{
-            method: "GET",
-            headers: headers()
-        })
-        .then(res=>res.json())
-        .then(data=>{
-            setCourses(data);
-        })
+        async function getData() {
+            const res = await fetchGet('/teacher/my-courses')
+            setCourses(res);
+        }
+        getData()
+    }, [])
+
+    useEffect(() => {
+        async function getData() {
+            const res = await fetchGet('/teacher/profile');
+            setTeacher(res)
+        }
+        getData();
     }, [])
 
     return {
-        Courses
+        teacher,
+        courses
     }
 }
